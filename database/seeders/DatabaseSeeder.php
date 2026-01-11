@@ -13,12 +13,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        // Create admin user
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => 'password123'
         ]);
+
+        // Seed project manager data
+        $this->call([
+            ProjectManagerSeeder::class,
+        ]);
     }
 }
+
