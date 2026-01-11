@@ -6,7 +6,7 @@
                 <i class="fas fa-layer-group"></i>
             </div>
             <h1>Welcome Back</h1>
-            <p>Sign in to continue to AdminPro</p>
+            <p>Sign in to continue to Personal Project Manager</p>
         </div>
 
         <!-- Login Form -->

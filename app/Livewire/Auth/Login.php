@@ -10,7 +10,7 @@ use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 #[Layout('components.auth.layout')]
-#[Title('Login - AdminPro')]
+#[Title('Login - Personal Project Manager')]
 class Login extends Component
 {
     #[Rule(['required', 'email'])]

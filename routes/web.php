@@ -7,8 +7,12 @@ use App\Livewire\Admin\PriceCategoryManagement;
 use App\Livewire\Admin\ClientManagement;
 use App\Livewire\Admin\ProjectManagement;
 use App\Livewire\Admin\InvoiceManagement;
+use App\Livewire\Public\ProjectTracker;
 use App\Livewire\Auth\Login;
 use App\Http\Controllers\Admin\LogoutController;
+
+// Public Routes
+Route::get('/project/{token}', ProjectTracker::class)->name('project.public');
 
 // Auth Routes
 Route::get('/login', Login::class)->name('login');

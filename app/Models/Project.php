@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Project extends Model
 {
@@ -17,6 +18,7 @@ class Project extends Model
         'final_price',
         'discount_applied',
         'notes',
+        'public_token',
     ];
 
     protected $casts = [
@@ -24,6 +26,27 @@ class Project extends Model
         'discount_applied' => 'decimal:2',
     ];
 
+    /**
+     * Boot the model.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($project) {
+            if (empty($project->public_token)) {
+                $project->public_token = Str::random(32);
+            }
+        });
+    }
+
+    /**
+     * Get the public URL for this project.
+     */
+    public function getPublicUrlAttribute(): string
+    {
+        return url('/project/' . $this->public_token);
+    }
     /**
      * Get the client for this project.
      */

@@ -133,7 +133,7 @@
     {{-- Create/Edit Modal --}}
     @if ($showModal)
         <div class="modal-backdrop-custom" wire:click.self="closeModal">
-            <div class="modal-content-custom" wire:click.stop style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-content-custom" wire:click.stop style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
                 <div class="modal-header-custom">
                     <h5 class="modal-title-custom">
                         {{ $editingId ? 'Edit Project' : 'Buat Project Baru' }}
@@ -293,7 +293,7 @@
     {{-- Detail Modal --}}
     @if ($showDetailModal && $viewingProject)
         <div class="modal-backdrop-custom" wire:click.self="closeDetailModal">
-            <div class="modal-content-custom" wire:click.stop style="max-width: 600px;">
+            <div class="modal-content-custom" wire:click.stop style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
                 <div class="modal-header-custom">
                     <h5 class="modal-title-custom">
                         <i class="fas fa-folder me-2"></i>Detail Project
@@ -364,6 +364,26 @@
                                 </span>
                             </div>
                         @endif
+                    </div>
+
+                    {{-- Public Link --}}
+                    <div class="p-3 rounded mb-3" style="background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary-color);">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <small class="d-block" style="color: var(--text-muted);">
+                                    <i class="fas fa-link me-1"></i>Public Link untuk Client
+                                </small>
+                                <input type="text" class="form-control form-control-sm mt-1" readonly
+                                    value="{{ $viewingProject->public_url }}"
+                                    id="publicUrl-{{ $viewingProject->id }}"
+                                    style="background: var(--bg-secondary); font-size: 0.85rem;">
+                            </div>
+                            <button type="button" class="btn btn-sm btn-primary-modern ms-2"
+                                onclick="copyToClipboard('publicUrl-{{ $viewingProject->id }}')"
+                                title="Salin Link">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
                     </div>
 
                     @if ($viewingProject->notes)

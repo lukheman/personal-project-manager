@@ -1,6 +1,6 @@
 @props([
     'title' => 'Modern Admin Dashboard',
-    'brandName' => 'AdminPro',
+    'brandName' => 'Personal Project Manager',
     'brandIcon' => 'fas fa-layer-group'
 ])
 
@@ -331,7 +331,7 @@
 
         .table-modern thead th {
             border: none;
-            background: transparent;
+            background: transparent !important;
             color: var(--text-secondary);
             font-weight: 600;
             font-size: 0.875rem;
@@ -341,7 +341,7 @@
         }
 
         .table-modern tbody tr {
-            background: var(--bg-secondary);
+            background: var(--bg-secondary) !important;
             box-shadow: var(--card-shadow);
             border-radius: 8px;
         }
@@ -351,6 +351,7 @@
             border: none;
             vertical-align: middle;
             color: var(--text-primary);
+            background: transparent !important;
         }
 
         .table-modern tbody tr td:first-child {
@@ -361,6 +362,26 @@
         .table-modern tbody tr td:last-child {
             border-top-right-radius: 8px;
             border-bottom-right-radius: 8px;
+        }
+
+        /* Dark mode table overrides for Bootstrap */
+        [data-theme="dark"] .table-modern tbody tr {
+            background: var(--bg-secondary) !important;
+        }
+
+        [data-theme="dark"] .table-modern tbody td {
+            background: transparent !important;
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .table {
+            --bs-table-bg: transparent;
+            --bs-table-striped-bg: transparent;
+            --bs-table-hover-bg: var(--hover-bg);
+        }
+
+        [data-theme="dark"] .table > :not(caption) > * > * {
+            background-color: transparent !important;
         }
 
         /* Theme Toggle Button */
@@ -591,6 +612,29 @@
 
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('show');
+        }
+
+        function copyToClipboard(elementId) {
+            const input = document.getElementById(elementId);
+            if (input) {
+                input.select();
+                input.setSelectionRange(0, 99999);
+                navigator.clipboard.writeText(input.value).then(() => {
+                    // Show success feedback
+                    const btn = input.nextElementSibling || input.parentNode.querySelector('button');
+                    if (btn) {
+                        const originalHtml = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i>';
+                        btn.classList.add('btn-success');
+                        btn.classList.remove('btn-primary-modern');
+                        setTimeout(() => {
+                            btn.innerHTML = originalHtml;
+                            btn.classList.remove('btn-success');
+                            btn.classList.add('btn-primary-modern');
+                        }, 2000);
+                    }
+                });
+            }
         }
     </script>
     @livewireScripts
