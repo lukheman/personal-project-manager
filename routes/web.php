@@ -17,6 +17,8 @@ Route::get('/project/{token}', ProjectTracker::class)->name('project.public');
 // Auth Routes
 Route::get('/login', Login::class)->name('login');
 
+Route::get('/', Login::class);
+
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/users', UserManagement::class)->name('admin.users');
