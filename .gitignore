@@ -1,0 +1,55 @@
+# Laravel
+/.phpunit.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/auth.json
+
+# IDE
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# Tauri / Desktop App
+/src-tauri/target/
+/src-tauri/gen/
+*.AppImage
+*.deb
+*.dmg
+*.msi
+
+# Database
+*.sqlite
+*.sqlite-journal
+/database/*.sqlite
+
+# Logs
+*.log
+/storage/logs/*.log
+
+# Cache
+.cache/
+*.cache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+/personal-project-manager.desktop 
+/Personal Project Manager_0.1.0_amd64.AppImage*.AppImage

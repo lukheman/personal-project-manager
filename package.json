@@ -1,0 +1,32 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "dev:vite:web": "vite --config vite.web.config.js",
+        "dev:vite:desktop": "vite --config vite.desktop.config.js",
+        "dev:tauri:desktop": "tauri dev",
+        "build:appimage": "NO_STRIP=1 tauri build --bundles appimage",
+        "build:deb": "tauri build --bundles deb",
+        "tauri": "tauri"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.1.11",
+        "autoprefixer": "^10.4.20",
+        "axios": "^1.7.4",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0",
+        "tailwindcss": "^4.0.7",
+        "vite": "^7.0.4"
+    },
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "4.9.5",
+        "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
+        "lightningcss-linux-x64-gnu": "^1.29.1"
+    },
+    "devDependencies": {
+        "@tauri-apps/cli": "^2.2.2"
+    }
+}
