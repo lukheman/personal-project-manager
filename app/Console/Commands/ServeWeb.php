@@ -13,7 +13,7 @@ class ServeWeb extends Command
 {
     protected $signature = 'serve:web';
 
-    public function handle()
+    public function handle(): void
     {
         intro( 'Running Web Environment' );
 
