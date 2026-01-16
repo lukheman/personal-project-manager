@@ -63,9 +63,10 @@
                             <td>
                                 <div class="d-flex align-items-center gap-2">
                                     <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem;">
-                                        {{ $project->client->initials }}
+                                        {{ $project->client?->initials ?? '?' }}
                                     </div>
-                                    <span style="color: var(--text-secondary);">{{ $project->client->name }}</span>
+                                    <span
+                                        style="color: var(--text-secondary);">{{ $project->client?->name ?? 'Client Tidak Ditemukan' }}</span>
                                 </div>
                             </td>
                             <td>
@@ -367,20 +368,19 @@
                     </div>
 
                     {{-- Public Link --}}
-                    <div class="p-3 rounded mb-3" style="background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary-color);">
+                    <div class="p-3 rounded mb-3"
+                        style="background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary-color);">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <small class="d-block" style="color: var(--text-muted);">
                                     <i class="fas fa-link me-1"></i>Public Link untuk Client
                                 </small>
                                 <input type="text" class="form-control form-control-sm mt-1" readonly
-                                    value="{{ $viewingProject->public_url }}"
-                                    id="publicUrl-{{ $viewingProject->id }}"
+                                    value="{{ $viewingProject->public_url }}" id="publicUrl-{{ $viewingProject->id }}"
                                     style="background: var(--bg-secondary); font-size: 0.85rem;">
                             </div>
                             <button type="button" class="btn btn-sm btn-primary-modern ms-2"
-                                onclick="copyToClipboard('publicUrl-{{ $viewingProject->id }}')"
-                                title="Salin Link">
+                                onclick="copyToClipboard('publicUrl-{{ $viewingProject->id }}')" title="Salin Link">
                                 <i class="fas fa-copy"></i>
                             </button>
                         </div>

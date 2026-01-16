@@ -51,7 +51,8 @@
                                         <small class="text-muted">{{ $project->features->count() }} fitur</small>
                                     </td>
                                     <td>
-                                        <span style="color: var(--text-secondary);">{{ $project->client->name }}</span>
+                                        <span
+                                            style="color: var(--text-secondary);">{{ $project->client?->name ?? 'Client Tidak Ditemukan' }}</span>
                                     </td>
                                     <td>
                                         <span class="fw-semibold" style="color: var(--success-color);">
@@ -136,7 +137,7 @@
                         style="border-bottom: 1px solid var(--border-color);">
                         <div>
                             <div class="fw-semibold" style="color: var(--text-primary);">{{ $paid->project_name }}</div>
-                            <small class="text-muted">{{ $paid->client->name }}</small>
+                            <small class="text-muted">{{ $paid->client?->name ?? '-' }}</small>
                         </div>
                         <div class="text-end">
                             <span class="fw-semibold" style="color: var(--success-color);">
@@ -178,7 +179,7 @@
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span class="text-muted">Client</span>
-                        <span style="color: var(--text-primary);">{{ $invoiceProject->client->name }}</span>
+                        <span style="color: var(--text-primary);">{{ $invoiceProject->client?->name ?? '-' }}</span>
                     </div>
                     <div class="d-flex justify-content-between">
                         <span class="text-muted">Tanggal</span>
@@ -215,7 +216,7 @@
                 </div>
 
                 {{-- Referral Discount Section --}}
-                @if ($invoiceProject->client->available_referral_credit > 0)
+                @if ($invoiceProject->client && $invoiceProject->client->available_referral_credit > 0)
                     <div class="p-3 rounded mb-4"
                         style="background: rgba(245, 158, 11, 0.1); border: 2px dashed var(--warning-color);">
                         <div class="d-flex align-items-start gap-3">
@@ -302,7 +303,7 @@
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span class="text-muted">Client</span>
-                        <span style="color: var(--text-primary);">{{ $paymentProject->client->name }}</span>
+                        <span style="color: var(--text-primary);">{{ $paymentProject->client?->name ?? '-' }}</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span class="text-muted">Total Tagihan</span>

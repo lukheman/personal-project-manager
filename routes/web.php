@@ -8,18 +8,18 @@ use App\Livewire\Admin\ClientManagement;
 use App\Livewire\Admin\ProjectManagement;
 use App\Livewire\Admin\InvoiceManagement;
 use App\Livewire\Public\ProjectTracker;
+use App\Livewire\Public\LandingPage;
 use App\Livewire\Auth\Login;
 use App\Http\Controllers\Admin\LogoutController;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\AttachmentController;
 
 // Public Routes
+Route::get('/', LandingPage::class)->name('home');
 Route::get('/project/{token}', ProjectTracker::class)->name('project.public');
 
 // Auth Routes
 Route::get('/login', Login::class)->name('login');
-
-Route::get('/', Login::class);
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
