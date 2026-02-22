@@ -100,10 +100,10 @@
                         @foreach($project->features->sortBy('effective_price') as $feature)
                             <div class="feature-item d-flex justify-content-between align-items-center">
                                 <div>
-                                    <div class="fw-semibold" style="color: var(--text-primary);">{{ $feature->category->name }}</div>
                                     @if($feature->description)
-                                        <small style="color: var(--text-muted);">{{ $feature->description }}</small>
+                                        <div class="fw-semibold" style="color: var(--text-primary);">{{ $feature->description }}</div>
                                     @endif
+                                    <span class="badge mt-1" style="background: var(--bg-tertiary); color: var(--text-muted); font-weight: 500;">{{ $feature->category->name }}</span>
                                 </div>
                                 <span class="fw-semibold" style="color: var(--success-color);">{{ $feature->formatted_price }}</span>
                             </div>
