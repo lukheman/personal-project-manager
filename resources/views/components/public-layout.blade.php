@@ -1,6 +1,6 @@
 @props([
     'title' => 'Project Tracker',
-    'brandName' => 'Personal Project Manager'
+    'brandName' => 'Aplikasita'
 ])
 
 <!DOCTYPE html>

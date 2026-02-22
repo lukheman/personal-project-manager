@@ -1,6 +1,6 @@
 @props([
     'title' => 'Modern Admin Dashboard',
-    'brandName' => 'Personal Project Manager',
+    'brandName' => 'Aplikasita',
     'brandIcon' => 'fas fa-layer-group'
 ])
 

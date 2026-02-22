@@ -1,4 +1,4 @@
-# 📋 Personal Project Manager
+# 📋 Aplikasita
 
 Aplikasi manajemen proyek freelance yang dibangun dengan **Laravel 12**, **Livewire 3**, dan **Tailwind CSS 4**. Mendukung versi web dan desktop (via Tauri).
 

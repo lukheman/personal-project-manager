@@ -1,5 +1,5 @@
 @props([
-    'brandName' => 'Personal Project Manager',
+    'brandName' => 'Aplikasita',
     'brandIcon' => 'fas fa-layer-group'
 ])
 
