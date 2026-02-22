@@ -97,7 +97,7 @@
                     </div>
                 @else
                     <div>
-                        @foreach($project->features as $feature)
+                        @foreach($project->features->sortBy('effective_price') as $feature)
                             <div class="feature-item d-flex justify-content-between align-items-center">
                                 <div>
                                     <div class="fw-semibold" style="color: var(--text-primary);">{{ $feature->category->name }}</div>
