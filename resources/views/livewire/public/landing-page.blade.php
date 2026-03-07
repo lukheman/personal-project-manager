@@ -11,7 +11,7 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portofolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tech">Teknologi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimoni</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#testimonials">Testimoni</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
                 </ul>
@@ -332,55 +332,55 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title fade-in">Apa Kata Klien</h2>
-                <p class="section-subtitle fade-in">Kepuasan klien adalah prioritas utama saya</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Sangat profesional dan responsif. Website yang dibuatkan sangat
-                            cepat dan sesuai ekspektasi. Highly recommended!"</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">AS</div>
-                            <div>
-                                <div class="testimonial-name">Ahmad Surya</div>
-                                <div class="testimonial-role">CEO, TechStart Indonesia</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Kualitas code-nya rapi dan mudah di-maintain. Komunikasi juga
-                            sangat baik, selalu update progress secara berkala."</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">DP</div>
-                            <div>
-                                <div class="testimonial-name">Diana Putri</div>
-                                <div class="testimonial-role">CTO, Fashion Hub</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 fade-in">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Sudah 3 proyek bersama dan selalu puas dengan hasilnya. Tepat waktu
-                            dan budget yang kompetitif."</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">RW</div>
-                            <div>
-                                <div class="testimonial-name">Rudi Wijaya</div>
-                                <div class="testimonial-role">Owner, Warung Digital</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- <section id="testimonials"> -->
+    <!--     <div class="container"> -->
+    <!--         <div class="text-center mb-5"> -->
+    <!--             <h2 class="section-title fade-in">Apa Kata Klien</h2> -->
+    <!--             <p class="section-subtitle fade-in">Kepuasan klien adalah prioritas utama saya</p> -->
+    <!--         </div> -->
+    <!--         <div class="row g-4"> -->
+    <!--             <div class="col-md-6 col-lg-4 fade-in"> -->
+    <!--                 <div class="testimonial-card"> -->
+    <!--                     <p class="testimonial-text">"Sangat profesional dan responsif. Website yang dibuatkan sangat -->
+    <!--                         cepat dan sesuai ekspektasi. Highly recommended!"</p> -->
+    <!--                     <div class="testimonial-author"> -->
+    <!--                         <div class="testimonial-avatar">AS</div> -->
+    <!--                         <div> -->
+    <!--                             <div class="testimonial-name">Ahmad Surya</div> -->
+    <!--                             <div class="testimonial-role">CEO, TechStart Indonesia</div> -->
+    <!--                         </div> -->
+    <!--                     </div> -->
+    <!--                 </div> -->
+    <!--             </div> -->
+    <!--             <div class="col-md-6 col-lg-4 fade-in"> -->
+    <!--                 <div class="testimonial-card"> -->
+    <!--                     <p class="testimonial-text">"Kualitas code-nya rapi dan mudah di-maintain. Komunikasi juga -->
+    <!--                         sangat baik, selalu update progress secara berkala."</p> -->
+    <!--                     <div class="testimonial-author"> -->
+    <!--                         <div class="testimonial-avatar">DP</div> -->
+    <!--                         <div> -->
+    <!--                             <div class="testimonial-name">Diana Putri</div> -->
+    <!--                             <div class="testimonial-role">CTO, Fashion Hub</div> -->
+    <!--                         </div> -->
+    <!--                     </div> -->
+    <!--                 </div> -->
+    <!--             </div> -->
+    <!--             <div class="col-md-6 col-lg-4 fade-in"> -->
+    <!--                 <div class="testimonial-card"> -->
+    <!--                     <p class="testimonial-text">"Sudah 3 proyek bersama dan selalu puas dengan hasilnya. Tepat waktu -->
+    <!--                         dan budget yang kompetitif."</p> -->
+    <!--                     <div class="testimonial-author"> -->
+    <!--                         <div class="testimonial-avatar">RW</div> -->
+    <!--                         <div> -->
+    <!--                             <div class="testimonial-name">Rudi Wijaya</div> -->
+    <!--                             <div class="testimonial-role">Owner, Warung Digital</div> -->
+    <!--                         </div> -->
+    <!--                     </div> -->
+    <!--                 </div> -->
+    <!--             </div> -->
+    <!--         </div> -->
+    <!--     </div> -->
+    <!-- </section> -->
 
     <!-- Workflow Section -->
     <section style="background: linear-gradient(135deg, #f0f4ff 0%, #fdf4ff 100%);" id="workflow">
