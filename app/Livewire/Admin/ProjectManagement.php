@@ -14,7 +14,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
-#[Layout('components.admin.livewire-layout')]
+#[Layout('layouts.app')]
 #[Title('Manajemen Project')]
 class ProjectManagement extends Component
 {

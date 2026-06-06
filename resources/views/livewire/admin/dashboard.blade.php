@@ -1,15 +1,15 @@
 <div>
     {{-- Page Header --}}
-    <x-admin.page-header title="Dashboard Overview" subtitle="Welcome back! Here's what's happening with your projects.">
+    <x-layout.page-header title="Dashboard Overview" subtitle="Welcome back! Here's what's happening with your projects.">
         <x-slot:actions>
-            <x-admin.button variant="primary" icon="fas fa-plus" href="{{ route('admin.projects') }}">New Project</x-admin.button>
+            <x-ui.button variant="primary" icon="fas fa-plus" href="{{ route('admin.projects') }}">New Project</x-ui.button>
         </x-slot:actions>
-    </x-admin.page-header>
+    </x-layout.page-header>
 
     {{-- Stats Cards --}}
     <div class="row g-4 mb-4">
         <div class="col-md-6 col-lg-3">
-            <x-admin.stat-card
+            <x-layout.stat-card
                 icon="fas fa-folder-open"
                 label="Total Projects"
                 :value="$totalProjects"
@@ -19,7 +19,7 @@
             />
         </div>
         <div class="col-md-6 col-lg-3">
-            <x-admin.stat-card
+            <x-layout.stat-card
                 icon="fas fa-users"
                 label="Total Clients"
                 :value="$totalClients"
@@ -29,7 +29,7 @@
             />
         </div>
         <div class="col-md-6 col-lg-3">
-            <x-admin.stat-card
+            <x-layout.stat-card
                 icon="fas fa-dollar-sign"
                 label="Total Revenue"
                 :value="'Rp ' . number_format($totalRevenue, 0, ',', '.')"
@@ -39,7 +39,7 @@
             />
         </div>
         <div class="col-md-6 col-lg-3">
-            <x-admin.stat-card
+            <x-layout.stat-card
                 icon="fas fa-clock"
                 label="Pending Revenue"
                 :value="'Rp ' . number_format($pendingRevenue, 0, ',', '.')"
@@ -98,7 +98,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <x-admin.badge
+                                            <x-ui.badge
                                                 :variant="$project->status_color"
                                                 :icon="match($project->status) {
                                                     'pending' => 'fas fa-clock',
@@ -109,7 +109,7 @@
                                                 }"
                                             >
                                                 {{ $project->status_label }}
-                                            </x-admin.badge>
+                                            </x-ui.badge>
                                         </td>
                                         <td>
                                             <strong style="color: var(--text-primary);">{{ $project->formatted_final_price }}</strong>

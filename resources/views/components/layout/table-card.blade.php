@@ -21,7 +21,7 @@
         </div>
     @endif
 
-    <x-admin.table :headers="$headers">
+    <x-layout.table :headers="$headers">
         @if(isset($head))
             <x-slot:head>{{ $head }}</x-slot:head>
         @endif
@@ -29,5 +29,5 @@
         @if(isset($foot))
             <x-slot:foot>{{ $foot }}</x-slot:foot>
         @endif
-    </x-admin.table>
+    </x-layout.table>
 </div>

@@ -1,24 +1,24 @@
 <div>
     {{-- Page Header --}}
-    <x-admin.page-header title="User Management" subtitle="Manage all users in the system">
+    <x-layout.page-header title="User Management" subtitle="Manage all users in the system">
         <x-slot:actions>
-            <x-admin.button variant="primary" icon="fas fa-plus" wire:click="openCreateModal">
+            <x-ui.button variant="primary" icon="fas fa-plus" wire:click="openCreateModal">
                 Add User
-            </x-admin.button>
+            </x-ui.button>
         </x-slot:actions>
-    </x-admin.page-header>
+    </x-layout.page-header>
 
     {{-- Flash Messages --}}
     @if (session('success'))
-        <x-admin.alert variant="success" title="Success!" class="mb-4">
+        <x-ui.alert variant="success" title="Success!" class="mb-4">
             {{ session('success') }}
-        </x-admin.alert>
+        </x-ui.alert>
     @endif
 
     @if (session('error'))
-        <x-admin.alert variant="danger" title="Error!" class="mb-4">
+        <x-ui.alert variant="danger" title="Error!" class="mb-4">
             {{ session('error') }}
-        </x-admin.alert>
+        </x-ui.alert>
     @endif
 
     {{-- Users Table Card --}}
@@ -63,9 +63,9 @@
                             <td class="text-muted">{{ $user->created_at->format('M d, Y') }}</td>
                             <td>
                                 @if($user->email_verified_at)
-                                    <x-admin.badge variant="success" icon="fas fa-check-circle">Verified</x-admin.badge>
+                                    <x-ui.badge variant="success" icon="fas fa-check-circle">Verified</x-ui.badge>
                                 @else
-                                    <x-admin.badge variant="warning" icon="fas fa-clock">Pending</x-admin.badge>
+                                    <x-ui.badge variant="warning" icon="fas fa-clock">Pending</x-ui.badge>
                                 @endif
                             </td>
                             <td>
@@ -160,12 +160,12 @@
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <x-admin.button type="button" variant="outline" wire:click="closeModal">
+                        <x-ui.button type="button" variant="outline" wire:click="closeModal">
                             Cancel
-                        </x-admin.button>
-                        <x-admin.button type="submit" variant="primary">
+                        </x-ui.button>
+                        <x-ui.button type="submit" variant="primary">
                             {{ $editingUserId ? 'Update User' : 'Create User' }}
-                        </x-admin.button>
+                        </x-ui.button>
                     </div>
                 </form>
             </div>
@@ -173,7 +173,7 @@
     @endif
 
     {{-- Delete Confirmation Modal --}}
-    <x-admin.confirm-modal
+    <x-ui.confirm-modal
         :show="$showDeleteModal"
         title="Confirm Delete"
         message="Are you sure you want to delete this user? This action cannot be undone."
@@ -185,5 +185,5 @@
         <x-slot:confirmButton>
             <i class="fas fa-trash-alt me-2"></i>Delete User
         </x-slot:confirmButton>
-    </x-admin.confirm-modal>
+    </x-ui.confirm-modal>
 </div>

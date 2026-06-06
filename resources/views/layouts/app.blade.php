@@ -540,28 +540,28 @@
 </head>
 <body>
     <!-- Sidebar -->
-    <x-admin.sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
-        <x-admin.sidebar-section title="Main">
-            <x-admin.sidebar-link href="{{ route('dashboard') }}" icon="fas fa-home" :active="request()->routeIs('dashboard')">Dashboard</x-admin.sidebar-link>
-            <x-admin.sidebar-link href="{{ route('admin.users') }}" icon="fas fa-users" :active="request()->routeIs('admin.users')">Users</x-admin.sidebar-link>
-        </x-admin.sidebar-section>
+    <x-layout.sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
+        <x-layout.sidebar-section title="Main">
+            <x-layout.sidebar-link href="{{ route('dashboard') }}" icon="fas fa-home" :active="request()->routeIs('dashboard')">Dashboard</x-layout.sidebar-link>
+            <x-layout.sidebar-link href="{{ route('admin.users') }}" icon="fas fa-users" :active="request()->routeIs('admin.users')">Users</x-layout.sidebar-link>
+        </x-layout.sidebar-section>
 
-        <x-admin.sidebar-section title="Project Manager">
-            <x-admin.sidebar-link href="{{ route('admin.price-categories') }}" icon="fas fa-tags" :active="request()->routeIs('admin.price-categories')">Kategori Harga</x-admin.sidebar-link>
-            <x-admin.sidebar-link href="{{ route('admin.clients') }}" icon="fas fa-user-friends" :active="request()->routeIs('admin.clients')">Clients</x-admin.sidebar-link>
-            <x-admin.sidebar-link href="{{ route('admin.projects') }}" icon="fas fa-folder-open" :active="request()->routeIs('admin.projects')">Projects</x-admin.sidebar-link>
-            <x-admin.sidebar-link href="{{ route('admin.invoices') }}" icon="fas fa-file-invoice-dollar" :active="request()->routeIs('admin.invoices')">Invoice</x-admin.sidebar-link>
-        </x-admin.sidebar-section>
+        <x-layout.sidebar-section title="Project Manager">
+            <x-layout.sidebar-link href="{{ route('admin.price-categories') }}" icon="fas fa-tags" :active="request()->routeIs('admin.price-categories')">Kategori Harga</x-layout.sidebar-link>
+            <x-layout.sidebar-link href="{{ route('admin.clients') }}" icon="fas fa-user-friends" :active="request()->routeIs('admin.clients')">Clients</x-layout.sidebar-link>
+            <x-layout.sidebar-link href="{{ route('admin.projects') }}" icon="fas fa-folder-open" :active="request()->routeIs('admin.projects')">Projects</x-layout.sidebar-link>
+            <x-layout.sidebar-link href="{{ route('admin.invoices') }}" icon="fas fa-file-invoice-dollar" :active="request()->routeIs('admin.invoices')">Invoice</x-layout.sidebar-link>
+        </x-layout.sidebar-section>
 
-        <x-admin.sidebar-section title="Settings">
-            <x-admin.sidebar-link href="#settings" icon="fas fa-cog">Settings</x-admin.sidebar-link>
-        </x-admin.sidebar-section>
-    </x-admin.sidebar>
+        <x-layout.sidebar-section title="Settings">
+            <x-layout.sidebar-link href="#settings" icon="fas fa-cog">Settings</x-layout.sidebar-link>
+        </x-layout.sidebar-section>
+    </x-layout.sidebar>
 
     <!-- Main Content -->
     <div class="main-content">
         <!-- Top Bar -->
-        <x-admin.topbar
+        <x-layout.topbar
             user-name="Admin User"
             user-role="Administrator"
             :notification-count="0"

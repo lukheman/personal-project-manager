@@ -1,13 +1,13 @@
 <div>
     {{-- Page Header --}}
-    <x-admin.page-header title="Invoice & Pembayaran" subtitle="Kelola invoice, pembayaran, dan diskon referral">
-    </x-admin.page-header>
+    <x-layout.page-header title="Invoice & Pembayaran" subtitle="Kelola invoice, pembayaran, dan diskon referral">
+    </x-layout.page-header>
 
     {{-- Flash Messages --}}
     @if (session('success'))
-        <x-admin.alert variant="success" title="Berhasil!" class="mb-4">
+        <x-ui.alert variant="success" title="Berhasil!" class="mb-4">
             {{ session('success') }}
-        </x-admin.alert>
+        </x-ui.alert>
     @endif
 
     <div class="row">
@@ -84,9 +84,9 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <x-admin.badge :variant="$project->status_color">
+                                        <x-ui.badge :variant="$project->status_color">
                                             {{ $project->status_label }}
-                                        </x-admin.badge>
+                                        </x-ui.badge>
                                     </td>
                                     <td>
                                         <div class="d-flex gap-1">
@@ -270,12 +270,12 @@
                 </div>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <x-admin.button type="button" variant="outline" wire:click="closeInvoiceModal">
+                    <x-ui.button type="button" variant="outline" wire:click="closeInvoiceModal">
                         Batal
-                    </x-admin.button>
-                    <x-admin.button type="button" variant="primary" wire:click="finalizeInvoice">
+                    </x-ui.button>
+                    <x-ui.button type="button" variant="primary" wire:click="finalizeInvoice">
                         <i class="fas fa-check me-1"></i>Finalisasi Invoice
-                    </x-admin.button>
+                    </x-ui.button>
                 </div>
             </div>
         </div>
@@ -406,9 +406,9 @@
                                 </div>
                             </div>
 
-                            <x-admin.button type="submit" variant="primary" class="w-100">
+                            <x-ui.button type="submit" variant="primary" class="w-100">
                                 <i class="fas fa-plus me-1"></i>Tambah Pembayaran
-                            </x-admin.button>
+                            </x-ui.button>
                         </form>
                     </div>
                 @else
@@ -419,9 +419,9 @@
                 @endif
 
                 <div class="d-flex justify-content-end">
-                    <x-admin.button type="button" variant="outline" wire:click="closePaymentModal">
+                    <x-ui.button type="button" variant="outline" wire:click="closePaymentModal">
                         Tutup
-                    </x-admin.button>
+                    </x-ui.button>
                 </div>
             </div>
         </div>

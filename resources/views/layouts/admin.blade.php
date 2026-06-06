@@ -427,9 +427,9 @@
 </head>
 <body>
     <!-- Sidebar -->
-    <x-admin.sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
+    <x-layout.sidebar :brand-name="$brandName" :brand-icon="$brandIcon">
         {{ $sidebar }}
-    </x-admin.sidebar>
+    </x-layout.sidebar>
 
     <!-- Main Content -->
     <div class="main-content">

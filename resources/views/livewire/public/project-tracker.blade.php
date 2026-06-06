@@ -85,10 +85,17 @@
         {{-- Features --}}
         <div class="col-lg-6">
             <div class="modern-card h-100">
-                <h5 class="fw-semibold mb-4" style="color: var(--text-primary);">
+                <h5 class="fw-semibold mb-3" style="color: var(--text-primary);">
                     <i class="fas fa-puzzle-piece me-2" style="color: var(--primary-color);"></i>
                     Project Features ({{ $project->features->count() }})
                 </h5>
+
+                <div class="mb-4 p-2 rounded" style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--warning-color);">
+                    <div class="d-flex align-items-start gap-2">
+                        <i class="fas fa-info-circle mt-1" style="color: var(--warning-color);"></i>
+                        <span style="color: var(--warning-color); font-size: 0.9rem;"><strong>Catatan:</strong> Penambahan fitur dikenai biaya tambahan.</span>
+                    </div>
+                </div>
 
                 @if($project->features->isEmpty())
                     <div class="text-center py-4">

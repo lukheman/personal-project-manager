@@ -11,7 +11,7 @@ use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-#[Layout('components.admin.livewire-layout')]
+#[Layout('layouts.app')]
 #[Title('User Management')]
 class UserManagement extends Component
 {

@@ -1,18 +1,18 @@
 <div>
     {{-- Page Header --}}
-    <x-admin.page-header title="Manajemen Project" subtitle="Kelola project dan estimasi harga">
+    <x-layout.page-header title="Manajemen Project" subtitle="Kelola project dan estimasi harga">
         <x-slot:actions>
-            <x-admin.button variant="primary" icon="fas fa-plus" wire:click="openCreateModal">
+            <x-ui.button variant="primary" icon="fas fa-plus" wire:click="openCreateModal">
                 Buat Project
-            </x-admin.button>
+            </x-ui.button>
         </x-slot:actions>
-    </x-admin.page-header>
+    </x-layout.page-header>
 
     {{-- Flash Messages --}}
     @if (session('success'))
-        <x-admin.alert variant="success" title="Berhasil!" class="mb-4">
+        <x-ui.alert variant="success" title="Berhasil!" class="mb-4">
             {{ session('success') }}
-        </x-admin.alert>
+        </x-ui.alert>
     @endif
 
     {{-- Projects Table Card --}}
@@ -88,9 +88,9 @@
                                 @endif
                             </td>
                             <td>
-                                <x-admin.badge :variant="$project->status_color">
+                                <x-ui.badge :variant="$project->status_color">
                                     {{ $project->status_label }}
-                                </x-admin.badge>
+                                </x-ui.badge>
                             </td>
                             <td>
                                 <div class="d-flex gap-1">
@@ -279,12 +279,12 @@
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <x-admin.button type="button" variant="outline" wire:click="closeModal">
+                        <x-ui.button type="button" variant="outline" wire:click="closeModal">
                             Batal
-                        </x-admin.button>
-                        <x-admin.button type="submit" variant="primary">
+                        </x-ui.button>
+                        <x-ui.button type="submit" variant="primary">
                             {{ $editingId ? 'Update Project' : 'Simpan Project' }}
-                        </x-admin.button>
+                        </x-ui.button>
                     </div>
                 </form>
             </div>
@@ -310,9 +310,9 @@
                             <h4 class="mb-1" style="color: var(--text-primary);">{{ $viewingProject->project_name }}</h4>
                             <span class="text-muted">{{ $viewingProject->created_at->format('d F Y') }}</span>
                         </div>
-                        <x-admin.badge :variant="$viewingProject->status_color">
+                        <x-ui.badge :variant="$viewingProject->status_color">
                             {{ $viewingProject->status_label }}
-                        </x-admin.badge>
+                        </x-ui.badge>
                     </div>
 
                     <div class="p-3 rounded mb-3" style="background: var(--hover-bg);">
@@ -395,9 +395,9 @@
                 </div>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <x-admin.button type="button" variant="outline" wire:click="closeDetailModal">
+                    <x-ui.button type="button" variant="outline" wire:click="closeDetailModal">
                         Tutup
-                    </x-admin.button>
+                    </x-ui.button>
                     <a href="{{ route('admin.invoices') }}?project={{ $viewingProject->id }}"
                         class="btn btn-modern btn-primary-modern">
                         <i class="fas fa-file-invoice me-1"></i>Buat Invoice
@@ -408,11 +408,11 @@
     @endif
 
     {{-- Delete Confirmation Modal --}}
-    <x-admin.confirm-modal :show="$showDeleteModal" title="Konfirmasi Hapus"
+    <x-ui.confirm-modal :show="$showDeleteModal" title="Konfirmasi Hapus"
         message="Apakah Anda yakin ingin menghapus project ini? Semua data fitur terkait juga akan dihapus."
         on-confirm="delete" on-cancel="cancelDelete" variant="danger" icon="fas fa-exclamation-triangle">
         <x-slot:confirmButton>
             <i class="fas fa-trash-alt me-2"></i>Hapus
         </x-slot:confirmButton>
-    </x-admin.confirm-modal>
+    </x-ui.confirm-modal>
 </div>

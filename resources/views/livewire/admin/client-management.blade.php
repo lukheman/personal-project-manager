@@ -1,18 +1,18 @@
 <div>
     {{-- Page Header --}}
-    <x-admin.page-header title="Manajemen Client" subtitle="Kelola data client dan tracking referral">
+    <x-layout.page-header title="Manajemen Client" subtitle="Kelola data client dan tracking referral">
         <x-slot:actions>
-            <x-admin.button variant="primary" icon="fas fa-plus" wire:click="openCreateModal">
+            <x-ui.button variant="primary" icon="fas fa-plus" wire:click="openCreateModal">
                 Tambah Client
-            </x-admin.button>
+            </x-ui.button>
         </x-slot:actions>
-    </x-admin.page-header>
+    </x-layout.page-header>
 
     {{-- Flash Messages --}}
     @if (session('success'))
-        <x-admin.alert variant="success" title="Berhasil!" class="mb-4">
+        <x-ui.alert variant="success" title="Berhasil!" class="mb-4">
             {{ session('success') }}
-        </x-admin.alert>
+        </x-ui.alert>
     @endif
 
     {{-- Clients Table Card --}}
@@ -178,12 +178,12 @@
                     </div>
 
                     <div class="d-flex justify-content-end gap-2">
-                        <x-admin.button type="button" variant="outline" wire:click="closeModal">
+                        <x-ui.button type="button" variant="outline" wire:click="closeModal">
                             Batal
-                        </x-admin.button>
-                        <x-admin.button type="submit" variant="primary">
+                        </x-ui.button>
+                        <x-ui.button type="submit" variant="primary">
                             {{ $editingId ? 'Update' : 'Simpan' }}
-                        </x-admin.button>
+                        </x-ui.button>
                     </div>
                 </form>
             </div>
@@ -279,24 +279,24 @@
                 </div>
 
                 <div class="d-flex justify-content-end gap-2">
-                    <x-admin.button type="button" variant="outline" wire:click="closeDetailModal">
+                    <x-ui.button type="button" variant="outline" wire:click="closeDetailModal">
                         Tutup
-                    </x-admin.button>
-                    <x-admin.button type="button" variant="primary" wire:click="closeDetailModal"
+                    </x-ui.button>
+                    <x-ui.button type="button" variant="primary" wire:click="closeDetailModal"
                         x-on:click="$wire.openEditModal({{ $viewingClient->id }})">
                         <i class="fas fa-edit me-1"></i>Edit
-                    </x-admin.button>
+                    </x-ui.button>
                 </div>
             </div>
         </div>
     @endif
 
     {{-- Delete Confirmation Modal --}}
-    <x-admin.confirm-modal :show="$showDeleteModal" title="Konfirmasi Hapus"
+    <x-ui.confirm-modal :show="$showDeleteModal" title="Konfirmasi Hapus"
         message="Apakah Anda yakin ingin menghapus client ini? Semua data project terkait juga akan dihapus."
         on-confirm="delete" on-cancel="cancelDelete" variant="danger" icon="fas fa-exclamation-triangle">
         <x-slot:confirmButton>
             <i class="fas fa-trash-alt me-2"></i>Hapus
         </x-slot:confirmButton>
-    </x-admin.confirm-modal>
+    </x-ui.confirm-modal>
 </div>

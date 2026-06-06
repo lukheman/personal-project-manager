@@ -6,7 +6,7 @@ use App\Models\Project;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
-#[Layout('components.public-layout')]
+#[Layout('layouts.public')]
 class ProjectTracker extends Component
 {
     public string $token;

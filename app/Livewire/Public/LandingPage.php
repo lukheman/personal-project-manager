@@ -6,7 +6,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Layout('components.landing-layout')]
+#[Layout('layouts.landing')]
 #[Title('Akmal - Fullstack Web Developer | Jasa Pembuatan Website & Aplikasi')]
 class LandingPage extends Component
 {
